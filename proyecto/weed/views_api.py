@@ -6,5 +6,5 @@ from .models import Weed
 class WeedListado(APIView):
   def get(self, request, format=None):
     listado = Weed.objects.all()
-    serializer = WeedSerializer(listado, many = true)
+    serializer = WeedSerializer(listado, many = True)
     return Response(serializer.data)
