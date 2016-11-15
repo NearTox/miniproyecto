@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.gis.geos import GEOSGeometry
+#from django.contrib.gis.geos import GEOSGeometry
 from django.views.generic import View
 from .models import Weed
 from .forms import weedForm
@@ -18,9 +18,9 @@ class WeedView(View):
     if self.form.is_valid():
       weed = Weed() 
       weed.comentario = self.form.cleaned_data["comentario"]
-      #weed.latitud= self.form.cleaned_data["latitud"]
-      #weed.longitud= self.form.cleaned_data["longitud"]
-      weed.coods = GEOSGeometry("POINT({0} {1})".format(self.form.cleaned_data["latitud"],self.form.cleaned_data["longitud"]))
+      weed.latitud= self.form.cleaned_data["latitud"]
+      weed.longitud= self.form.cleaned_data["longitud"]
+      #weed.coods = GEOSGeometry("POINT({0} {1})".format(self.form.cleaned_data["latitud"],self.form.cleaned_data["longitud"]))
       weed.save()
       return redirect("weed-list")
     
