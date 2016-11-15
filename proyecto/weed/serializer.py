@@ -3,7 +3,8 @@ from .models import Weed
 class WeedSerializer(serializers.ModelSerializer):
   class Meta:
     model = Weed
-    fields = ["latitud",
+    fields = ["id",
+    "latitud",
       "longitud",
       "fecha",
       "weed",
