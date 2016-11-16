@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from . import urls_api
+from . import urls_api, urls_api_v2
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^weed/', include("weed.urls")),
-    url(r'^api/v1/', include(urls_api))
+    url(r'^api/v1/', include(urls_api)),
+    url(r'^api/v2/', include(urls_api_v2)),
 ]

@@ -11,3 +11,8 @@ class WeedSerializer(serializers.ModelSerializer):
       "comentario",
     ]
     #exlude = []
+
+class WeedSerializerV2(serializers.ModelSerializer):
+  class Meta:
+    model = Weed
+    exclude = []
