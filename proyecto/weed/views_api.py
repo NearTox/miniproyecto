@@ -1,5 +1,7 @@
+from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import filters
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from .serializer import WeedSerializer
@@ -49,9 +51,14 @@ class WeedListadoV2(generics.ListCreateAPIView):
 class WeedDetalleViewV2(generics.RetrieveUpdateDestroyAPIView):
   queryset = Weed.objects.all()
   serializer_class = WeedSerializerV2
+  filter_backends = (filters.DjangoFilterBackend,filters.SearchFilter,)
+  filter_fields = ('weed',)
+  search_fields = ('fecha',)
 
-from rest_framework import viewsets
 
 class WeedViewSet(viewsets.ModelViewSet):
   queryset = Weed.objects.all()
   serializer_class = WeedSerializerV2
+  filter_backends = (filters.DjangoFilterBackend,filters.SearchFilter,)
+  filter_fields = ('weed',)
+  search_fields = ('fecha',)
