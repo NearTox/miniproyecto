@@ -5,5 +5,9 @@
   "python.autoComplete.extraPaths": [
     "${workspaceRoot}/../entorno/lib/python3.5",
     "{workspaceRoot}/../entorno/lib/python3.5/site-packages", 
-  ]
+  ],
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/entorno/":true
+  }
 }

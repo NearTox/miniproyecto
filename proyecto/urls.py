@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .views import WeedView
+from . import urls_api
 
 urlpatterns = [
-    url(r'^post/', WeedView.as_view(), name = "weed-post"),
+    url(r'^admin/', admin.site.urls),
+    url(r'^weed/', include("weed.urls")),
+    url(r'^api/v1/', include(urls_api)),
 ]

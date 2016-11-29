@@ -1,8 +1,0 @@
-// Place your settings in this file to overwrite default and user settings.
-{
-  "python.pythonPath": "${workspaceRoot}/../entorno/bin/python",
-  "python.autoComplete.extraPaths": [
-    "${workspaceRoot}/../entorno/lib",
-    "${workspaceRoot}/../entorno/lib/site-packages"
-  ]
-}
